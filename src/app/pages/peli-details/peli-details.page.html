@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+
+    <ion-title>{{ content?.Genre }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card *ngIf="content">
+
+    <ion-card-header text-center>
+      <ion-card-title>{{ content.Title }}</ion-card-title>
+
+      <ion-card-subtitle>
+        {{ content.Year }} {{ content.language }}
+      </ion-card-subtitle>
+
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <img src="{{ content.Poster }}" alt="">
+      <br>
+      <br>
+      <div>{{ content.Plot }}</div>
+
+      <!--Tarjeta para el imdbRating-->
+      <ion-item lines="none">
+        <ion-icon slot="start" name="star-half"></ion-icon>
+        <ion-label text-wrap>
+          {{ content.imdbRating }}
+        </ion-label>
+      </ion-item>
+      <!-- Tarjeta para el director -->
+      <ion-item lines="none">
+        <ion-icon slot="start" name="diamond-outline"></ion-icon>
+        <ion-label text-wrap>
+          {{ content.Director }}
+        </ion-label>
+      </ion-item>
+      <!-- Tarjeta para los actores -->
+      <ion-item lines="none">
+        <ion-icon slot="start" name="people-circle-outline"></ion-icon>
+        <ion-label text-wrap>
+          {{ content.Actors }}
+        </ion-label>
+      </ion-item>
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
