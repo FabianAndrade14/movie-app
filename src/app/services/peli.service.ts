@@ -24,7 +24,7 @@ export class PeliService {
   //Método para buscar las películas dentro de la API
   searchMovies( title: string, type: string) {
 
-    this.url = `http://www.omdbapi.com/?s=${encodeURI(title)}&type=${type}&apikey=${this.apiKey}`;
+    this.url = `https://www.omdbapi.com/?s=${encodeURI(title)}&type=${type}&apikey=${this.apiKey}`;
     console.log(this.url);
 
     return this.http.get<IPelis>(this.url).pipe(  map (
@@ -32,6 +32,6 @@ export class PeliService {
   }
   //Método para obtener los detalles de cada película
   getDetails(id: string) {
-    return this.http.get<IPelis>(`http://www.omdbapi.com/?i=${id}&plot=full&apikey=${this.apiKey}`);
+    return this.http.get<IPelis>(`https://www.omdbapi.com/?i=${id}&plot=full&apikey=${this.apiKey}`);
   }
 }
